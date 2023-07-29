@@ -1,7 +1,7 @@
 export const config = {
-  serverUrl: "https://door.casdoor.com",
-  clientId: "014ae4bd048734ca2dea",
-  organizationName: "casbin",
-  appName: "app-casnode",
+  serverUrl: "https://sso.wereline.com",
+  clientId: "9977130d14c2deb4fa3e",
+  appName: "sso-wereline",
+  organizationName: "doubleflyindustries",
   redirectPath: "/callback", // in accordance with casdoor configuration
 };
