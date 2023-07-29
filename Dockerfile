@@ -1,25 +1,15 @@
-FROM node:14-alpine AS builder
-#ENV NODE_ENV production
-# dd a work directory
-#RUN apk update && apk upgrade && \
-   # apk add --no-cache git 
-#WORKDIR /app
-# Cache and Install dependencies
-#COPY package.json .
-#RUN npm install --production && npm cache clean --force
-# Copy app files
-#COPY . .
-# Build the app
+FROM node:18-alpine AS builder
 
 RUN apk update && apk upgrade && \
     apk add --no-cache git 
 RUN mkdir -p /app
 WORKDIR /app
 COPY ./package.json /app
+RUN npm istall -g nodemon
 RUN npm install --production && npm cache clean --force
 COPY ./ /app
 ENV NODE_ENV production
-
+RUN npm run dev
 RUN npm run build
 
 # Bundle static assets with nginx
