@@ -5,7 +5,7 @@ RUN apk update && apk upgrade && \
 RUN mkdir -p /app
 WORKDIR /app
 COPY ./package.json /app
-RUN npm istall -g nodemon
+RUN npm install -g nodemon
 RUN npm install --production && npm cache clean --force
 COPY ./ /app
 ENV NODE_ENV production
