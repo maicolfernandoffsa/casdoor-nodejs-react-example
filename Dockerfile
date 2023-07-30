@@ -21,5 +21,6 @@ COPY --from=builder /app/build /usr/share/nginx/html
 COPY default.conf /etc/nginx/conf.d/default.conf
 # Expose port
 EXPOSE 80
+EXPOSE 8080
 # Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;", "node", "server.js"]
