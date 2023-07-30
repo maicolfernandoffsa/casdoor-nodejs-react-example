@@ -9,7 +9,6 @@ RUN npm install -g nodemon
 RUN npm install --production && npm cache clean --force
 COPY ./ /app
 ENV NODE_ENV production
-RUN npm run dev
 RUN npm run build
 
 # Bundle static assets with nginx
