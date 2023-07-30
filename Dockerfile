@@ -22,4 +22,4 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 EXPOSE 8080
 # Start nginx
-CMD ["nginx", "-g", "daemon off;", "node", "server.js"]
+CMD [ "node", "server.js"]
